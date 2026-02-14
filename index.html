@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>StudyMate AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Main Glass Panel -->
+    <div class="glass-panel main-panel">
+      
+      <!-- Header with Username and Settings Button -->
+      <div class="panel-header">
+        <div class="username-display" id="usernameDisplay">student</div>
+        <button class="icon-button" id="settingsToggleBtn">
+          <img src="assets/icons/settings.svg" alt="settings" class="icon">
+        </button>
+      </div>
+
+      <!-- Settings Modal (Glass Popup) -->
+      <div class="settings-modal hidden" id="settingsModal">
+        <div class="settings-content glass-panel">
+          <h3>Settings</h3>
+          
+          <label for="usernameInput">Username</label>
+          <input type="text" id="usernameInput" placeholder="Enter username" value="student">
+          
+          <label for="apiKeyInput">API Key</label>
+          <input type="password" id="apiKeyInput" placeholder="Enter your API key">
+          
+          <button class="settings-btn" id="saveSettingsBtn">
+            <img src="assets/icons/check.svg" alt="save" class="icon-small"> Save
+          </button>
+          
+          <button class="settings-btn" id="deleteHistoryBtn">
+            <img src="assets/icons/trash.svg" alt="delete" class="icon-small"> Delete History
+          </button>
+          
+          <div class="toggle-container">
+            <span>Animations</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="animToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          
+          <button class="close-settings" id="closeSettingsBtn">
+            <img src="assets/icons/close.svg" alt="close" class="icon">
+          </button>
+        </div>
+      </div>
+
+      <!-- Study Mode Buttons -->
+      <div class="modes-container">
+        <button class="mode-btn" data-mode="explain simple">Explain Simple</button>
+        <button class="mode-btn" data-mode="short notes">Short Notes</button>
+        <button class="mode-btn" data-mode="long answer">Long Answer</button>
+        <button class="mode-btn" data-mode="solve step by step">Solve Step</button>
+        <button class="mode-btn" data-mode="quiz me 5 mcqs">Quiz Me</button>
+      </div>
+
+      <!-- Welcome Card -->
+      <div class="welcome-card glass-panel" id="welcomeCard">
+        <h1>StudyMate AI</h1>
+        <p>Ask any study question to begin</p>
+      </div>
+
+      <!-- Chat Messages Area -->
+      <div class="chat-area" id="chatArea"></div>
+
+      <!-- Typing Indicator (Hidden by Default) -->
+      <div class="typing-indicator hidden" id="typingIndicator">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Input Area and Action Buttons -->
+      <div class="input-section">
+        <div class="input-wrapper glass-panel">
+          <textarea id="messageInput" placeholder="Type your question..." rows="1"></textarea>
+          <button class="send-btn" id="sendBtn">
+            <img src="assets/icons/send.svg" alt="send" class="icon">
+          </button>
+        </div>
+        
+        <div class="action-buttons">
+          <button class="action-btn" id="copyLastBtn">
+            <img src="assets/icons/copy.svg" alt="copy" class="icon-small"> Copy
+          </button>
+          <button class="action-btn" id="clearChatBtn">
+            <img src="assets/icons/clear.svg" alt="clear" class="icon-small"> Clear
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Panel (Hidden by Default) -->
+  <div class="error-panel glass-panel hidden" id="errorPanel">
+    <img src="assets/icons/warning.svg" alt="warning" class="icon-small">
+    <span id="errorMessage">Error connecting to AI</span>
+    <button id="closeErrorBtn">
+      <img src="assets/icons/close.svg" alt="close" class="icon-small">
+    </button>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
